@@ -7,38 +7,27 @@ const RouteResults = () => {
     {
       type: 'Автотранспорт',
       icon: 'Truck',
-      sum: '45 000 ₽',
-      route: 'Москва → Тверь → Санкт-Петербург',
-      deadline: '2-3 дня'
+      sum: '≈ 45 000 ₽'
     },
     {
       type: 'Морская перевозка',
       icon: 'Ship',
-      sum: '32 000 ₽',
-      route: 'Москва → Санкт-Петербург (порт)',
-      deadline: '7-10 дней'
+      sum: '≈ 32 000 ₽'
     },
     {
       type: 'Ж/Д',
       icon: 'Train',
-      sum: '38 000 ₽',
-      route: 'Москва (ж/д) → Санкт-Петербург (ж/д)',
-      deadline: '3-5 дней'
+      sum: '≈ 38 000 ₽'
     },
     {
       type: 'Авиатранспорт',
       icon: 'Plane',
-      sum: '85 000 ₽',
-      route: 'Москва (аэропорт) → Санкт-Петербург (аэропорт)',
-      deadline: '1 день'
+      sum: '≈ 85 000 ₽'
     },
     {
       type: 'Комбинированный',
       icon: 'Package',
-      variability: 'Авто + Ж/Д',
-      sum: '40 000 ₽',
-      route: 'Москва (авто) → Тверь (ж/д) → Санкт-Петербург',
-      deadline: '3-4 дня'
+      sum: '≈ 40 000 ₽'
     }
   ];
 
@@ -63,26 +52,7 @@ const RouteResults = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    {option.variability && (
-                      <div>
-                        <p className="text-sm text-muted-foreground mb-1">Вариативность</p>
-                        <p className="font-semibold text-lg">{option.variability}</p>
-                      </div>
-                    )}
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-1">Сумма</p>
-                      <p className="font-semibold text-lg text-primary">{option.sum}</p>
-                    </div>
-                    <div className={option.variability ? 'md:col-span-2' : 'md:col-span-2'}>
-                      <p className="text-sm text-muted-foreground mb-1">Маршрут</p>
-                      <p className="font-semibold text-lg">{option.route}</p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground mb-1">Сроки</p>
-                      <p className="font-semibold text-lg">{option.deadline}</p>
-                    </div>
-                  </div>
+                  <p className="font-semibold text-2xl text-primary">{option.sum}</p>
                 </CardContent>
               </Card>
             ))}
