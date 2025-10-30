@@ -40,7 +40,7 @@ const Calculator = () => {
       <div className="max-w-4xl mx-auto">
         <div className="flex items-center justify-center mb-8 animate-fade-in">
           <h1 className="text-3xl md:text-4xl font-bold text-white font-heading">
-            Digital Manager
+            Калькулятор перевозки
           </h1>
         </div>
 
