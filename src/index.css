@@ -110,4 +110,10 @@
   h6 {
     font-family: "Montserrat", sans-serif;
   }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    @apply border-primary bg-primary/5;
+  }
 }
