@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
 import { useNavigate } from 'react-router-dom';
+import Header from '@/components/Header';
 
 const Calculator = () => {
   const navigate = useNavigate();
@@ -33,21 +34,14 @@ const Calculator = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted py-8 px-4">
+    <div className="min-h-screen bg-primary flex flex-col">
+      <Header />
+      <div className="flex-1 py-8 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center justify-between mb-8 animate-fade-in">
-          <Button
-            variant="ghost"
-            onClick={() => navigate('/')}
-            className="hover:bg-primary/10"
-          >
-            <Icon name="ArrowLeft" size={20} className="mr-2" />
-            Назад
-          </Button>
-          <h1 className="text-3xl md:text-4xl font-bold text-secondary font-heading">
+        <div className="flex items-center justify-center mb-8 animate-fade-in">
+          <h1 className="text-3xl md:text-4xl font-bold text-white font-heading">
             Digital Manager
           </h1>
-          <div className="w-24"></div>
         </div>
 
         <Tabs defaultValue="route" className="w-full animate-scale-in">
@@ -221,6 +215,7 @@ const Calculator = () => {
             </Card>
           </TabsContent>
         </Tabs>
+      </div>
       </div>
     </div>
   );
