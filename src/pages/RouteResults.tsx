@@ -63,13 +63,25 @@ const RouteResults = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-2">
+                  <div className={`grid gap-6 ${option.variability ? 'grid-cols-1 md:grid-cols-4' : 'grid-cols-1 md:grid-cols-3'}`}>
                     {option.variability && (
-                      <p className="font-medium text-lg">{option.variability}</p>
+                      <div>
+                        <p className="text-sm text-muted-foreground mb-1">Вариативность</p>
+                        <p className="font-medium text-lg">{option.variability}</p>
+                      </div>
                     )}
-                    <p className="font-semibold text-2xl text-primary">{option.sum}</p>
-                    <p className="text-lg">{option.route}</p>
-                    <p className="text-lg">{option.deadline}</p>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Сумма</p>
+                      <p className="font-semibold text-xl text-primary">{option.sum}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Маршрут</p>
+                      <p className="font-medium text-lg">{option.route}</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground mb-1">Сроки</p>
+                      <p className="font-medium text-lg">{option.deadline}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
