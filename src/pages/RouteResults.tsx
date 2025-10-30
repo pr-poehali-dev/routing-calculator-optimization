@@ -7,27 +7,38 @@ const RouteResults = () => {
     {
       type: 'Автотранспорт',
       icon: 'Truck',
-      sum: '≈ 45 000 ₽'
+      sum: '≈ 45 000 ₽',
+      route: 'Москва → Санкт-Петербург',
+      deadline: '2-3 дня'
     },
     {
       type: 'Морская перевозка',
       icon: 'Ship',
-      sum: '≈ 32 000 ₽'
+      sum: '≈ 32 000 ₽',
+      route: 'Москва → Санкт-Петербург',
+      deadline: '7-10 дней'
     },
     {
       type: 'Ж/Д',
       icon: 'Train',
-      sum: '≈ 38 000 ₽'
+      sum: '≈ 38 000 ₽',
+      route: 'Москва → Санкт-Петербург',
+      deadline: '3-5 дней'
     },
     {
       type: 'Авиатранспорт',
       icon: 'Plane',
-      sum: '≈ 85 000 ₽'
+      sum: '≈ 85 000 ₽',
+      route: 'Москва → Санкт-Петербург',
+      deadline: '1 день'
     },
     {
       type: 'Комбинированный',
       icon: 'Package',
-      sum: '≈ 40 000 ₽'
+      variability: 'Авто + Ж/Д',
+      sum: '≈ 40 000 ₽',
+      route: 'Москва → Санкт-Петербург',
+      deadline: '3-4 дня'
     }
   ];
 
@@ -52,7 +63,14 @@ const RouteResults = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-semibold text-2xl text-primary">{option.sum}</p>
+                  <div className="space-y-2">
+                    {option.variability && (
+                      <p className="font-medium text-lg">{option.variability}</p>
+                    )}
+                    <p className="font-semibold text-2xl text-primary">{option.sum}</p>
+                    <p className="text-lg">{option.route}</p>
+                    <p className="text-lg">{option.deadline}</p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
