@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
 import Header from '@/components/Header';
+import { useNavigate } from 'react-router-dom';
 
 const Calculator = () => {
+  const navigate = useNavigate();
   const [weight, setWeight] = useState('');
   const [volume, setVolume] = useState('');
   const [dimensions, setDimensions] = useState('');
@@ -150,6 +152,7 @@ const Calculator = () => {
               <Button
                 className="w-full font-heading font-semibold"
                 size="lg"
+                onClick={() => navigate('/route-results')}
               >
                 <Icon name="Calculator" size={20} className="mr-2" />
                 Рассчитать маршрут
